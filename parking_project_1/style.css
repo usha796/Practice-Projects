@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.box{
+    --bg-image:url('images/carpark.jpeg');
+    --bg-image-opacity:0.8;
+   
+    min-height: 100vh;
+   
+    position: relative;
+    isolation: isolate;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity:var(--bg-image-opacity) ;
+    background: var(--bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: #945512d4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.title {
+    flex: 1; /* Allow the title to take up available space */
+}
+
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav li {
+    margin-left: 20px;
+}
+
+.nav li:first-child {
+    margin-left: 0; /* Remove margin for the first item */
+}
+
+.nav li{
+    list-style: none;
+    margin: 10px;
+}
+.nav li a{
+    color: #e0edf6;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 1000;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.nav li:hover a{
+    color: #720204;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.register h2{
+    color:white;
+    padding-bottom: 20px;
+    display: flex;
+  
+    justify-content: center;
+    align-items: center;
+}
+.register{
+   
+    padding: 2%;
+    display:block;
+    border: 0.5px solid #002a324f;
+    border-radius: 3%;
+    background:#3a3e4469;
+    backdrop-filter: blur;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+   
+}
+.register form{
+    padding: 10px;
+}
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10x;
+}
+
+.input-group {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 6px; /* Add spacing between input groups */
+    padding: 5px;
+}
+
+.input-label {
+    width: 200px; /* Adjust width as needed */
+    margin-right: 10px; /* Add spacing between label and input */
+    font-size: 18px;
+    font-weight: 800;
+    color:#eaf5fd ;
+}
+
+.form-control {
+    flex: 1; /* Allow input to take remaining space */
+    padding: 7px;
+    width: 250px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.418);
+    color: white;
+}
+
+
+.btn{
+    text-align: center;
+    margin-top: 8px;
+  
+}
+.btn .btnbox{
+  
+    background: rgba(0, 0, 0, 0.401);
+    color: white;
+    padding: 8px;
+    width: 120px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn .btnbox:hover{
+    background: #b96e1de6;
+}
+.container #car{
+    text-transform: capitalize;
+    background: rgba(244,244,244,0.5);
+    position: absolute;
+    padding: 20px;
+    margin: 100px,0px,0px,50px;
+    border-radius: 5px;
+    right:10%;
+    top: 50%;
+}
+
+.records {
+    padding: 20px;
+    background:#141415aa;
+    background-color:#002a32de;
+    text-align: center; /* Center align all content */
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #e0edf6;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccccccb1;
+    border-radius: 5px;
+    background: transparent;
+}
+.search-input:focus{
+    outline: none;
+    border: 0.5px solid #d17d24d8;
+}
+
+.record-table {
+    overflow-x: auto; /* Enable horizontal scroll if table overflows */
+    overflow-y: auto;
+    max-height: 500px; /* Adjust the max height as needed */
+    
+    
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 0.5px solid #ccccccb1;
+    padding: 8px;
+    text-align: left;
+    color: #eaf5fd;
+    text-align: center;
+}
+
+.table th {
+    background-color: #2e3532cf;
+    
+}
+
+/* Style for even rows */
+.table tbody tr {
+    background-color:rgba(0, 0, 0, 0.36);
+}
+
+/* Hover effect */
+.table tbody tr:hover {
+    background-color: #d17d24a5;
+}
+.search-bar {
+    position: relative;
+}
+
+.search-input {
+    width: calc(90% - 30px); /* Adjust width to accommodate the icon */
+    padding-left: 30px; /* Add padding to the left to leave space for the icon */
+}
+
+.search-icon {
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.Vehiclerecords{
+    position: absolute;
+    width: 100%;
+    top: 12%;
+}
+footer {
+    background-color: rgba(26, 38, 38, 0.882);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-content ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.footer-content ul li:last-child {
+    margin-right: 0;
+}
+
+.footer-content ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Width and height of the scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 10px;
+}
+
+/* Track (the area behind the scrollbar) */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.653);
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background: #2e3532cf;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #002a329f;
+}
+
+a{
+    text-decoration: none;
+    color:red;
+}
+
